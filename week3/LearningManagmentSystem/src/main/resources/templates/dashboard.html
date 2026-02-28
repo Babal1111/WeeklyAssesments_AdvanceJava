@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome to Your Dashboard</h2>
+
+<!-- Optional: show logged-in user's email -->
+<p th:if="${user != null}">
+    Hello, <span th:text="${user.email}">User</span>!
+</p>
+
+<!-- Links to other pages -->
+<p>
+    <a th:href="@{/logout}">Logout</a>
+</p>
+
+<hr>
+
+<h3>Available Actions</h3>
+<ul>
+    <li><a th:href="@{/courses}">View Courses</a></li>
+    <li><a th:href="@{/profile}">Profile Settings</a></li>
+</ul>
+
+</body>
+</html>
